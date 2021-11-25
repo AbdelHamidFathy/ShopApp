@@ -1,0 +1,63 @@
+class CartModel {
+  late bool status;
+  late Data data;
+
+  CartModel.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    data = Data.fromJson(json['data']);
+  }
+}
+
+class Data {
+  List<CartItems> cartItems=[];
+  late int subTotal;
+  late int total;
+
+  Data.fromJson(Map<String, dynamic> json) {
+      json['cart_items'].forEach((element) {
+        cartItems.add(CartItems.fromJson(element));
+      });
+    subTotal = json['sub_total'];
+    total = json['total'];
+  }
+}
+
+class CartItems {
+  late int id;
+  late int quantity;
+  late Product product;
+
+  CartItems.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    quantity = json['quantity'];
+    product = Product.fromJson(json['product']);
+  }
+}
+
+class Product {
+  late int id;
+  late int price;
+  late int oldPrice;
+  late int discount;
+  late String image;
+  late String name;
+  late String description;
+  List<String> images=[];
+  late bool inFavorites;
+  late bool inCart;
+
+  Product.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    price = json['price'];
+    oldPrice = json['old_price'];
+    discount = json['discount'];
+    image = json['image'];
+    name = json['name'];
+    description = json['description'];
+    json['images'].forEach((element){
+      images.add(element);
+    });
+    inFavorites = json['in_favorites'];
+    inCart = json['in_cart'];
+  }
+}

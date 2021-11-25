@@ -1,0 +1,14 @@
+const String Login='login';
+const String Register='register';
+const String verfiyEmail='verify-email';
+const String resetPassword= 'reset-password';
+const String Home= 'home';
+const String Categories='categories';
+const String Notifications='notifications';
+const String Favorites='favorites';
+const String Profile='profile';
+const String UpdateProfile='update-profile';
+const String Search='products/search';
+const String Contacts='contacts';
+const String FQAs='faqs';
+const String Cart='carts';
