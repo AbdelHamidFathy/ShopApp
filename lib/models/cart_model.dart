@@ -10,8 +10,8 @@ class CartModel {
 
 class Data {
   List<CartItems> cartItems=[];
-  late int subTotal;
-  late int total;
+  late dynamic subTotal;
+  late dynamic total;
 
   Data.fromJson(Map<String, dynamic> json) {
       json['cart_items'].forEach((element) {
@@ -23,7 +23,7 @@ class Data {
 }
 
 class CartItems {
-  late int id;
+  late dynamic id;
   late int quantity;
   late Product product;
 
@@ -35,10 +35,10 @@ class CartItems {
 }
 
 class Product {
-  late int id;
-  late int price;
-  late int oldPrice;
-  late int discount;
+  late dynamic id;
+  late dynamic price;
+  late dynamic oldPrice;
+  late dynamic discount;
   late String image;
   late String name;
   late String description;

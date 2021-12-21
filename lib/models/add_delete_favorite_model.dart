@@ -12,7 +12,7 @@ class AddDeleteFavorite {
 }
 
 class Data {
-  late int id;
+  late dynamic id;
   late Product product;
 
   Data.fromJson(Map<String, dynamic> json) {
@@ -22,10 +22,10 @@ class Data {
 }
 
 class Product {
-  late int id;
-  late int price;
-  late int oldPrice;
-  late int discount;
+  late dynamic id;
+  late dynamic price;
+  late dynamic oldPrice;
+  late dynamic discount;
   late String image;
 
   Product.fromJson(Map<String, dynamic> json) {

@@ -13,6 +13,9 @@ class FQAsScreen extends StatelessWidget {
       builder:(context, state)=> Scaffold(
         appBar: AppBar(
           leading: back(context),
+          title: Text(
+            'FQAs'
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),

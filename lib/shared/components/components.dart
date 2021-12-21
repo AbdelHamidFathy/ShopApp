@@ -19,7 +19,7 @@ Widget defaultTextForm({
 }){
   return TextFormField(
     style: TextStyle(
-      color: AppCubit.get(context).isDark ? Colors.white : Colors.black,
+      color: Colors.black,
     ),
     onFieldSubmitted: onSubmitted,
     onChanged: onChanged,

@@ -53,7 +53,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 32.0,
                               fontWeight: FontWeight.bold,
-                              color: AppCubit.get(context).isDark ? Colors.white : Colors.black,
+                              color: Colors.black,
                             ),
                           ),
                           SizedBox(
@@ -73,7 +73,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                             height: 300.0,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              color: AppCubit.get(context).isDark ? Colors.grey[900] : Colors.grey[300],
+                              color: Colors.grey[300],
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Padding(

@@ -18,8 +18,8 @@ void main() async{
   await CacheHelper.init();
   DioHelper.init();
   Bloc.observer = MyBlocObserver();
-  dynamic onboard=CacheHelper.getData(key: 'onBoarding');
-  dynamic isDark=CacheHelper.getData(key: 'isDark');
+  bool? onboard=CacheHelper.getData(key: 'onBoarding');
+  bool? isDark=CacheHelper.getData(key: 'isDark');
   token=CacheHelper.getData(key: 'token');
   print(token);
   Widget widget;
@@ -36,8 +36,8 @@ void main() async{
 }
 
 class MyApp extends StatelessWidget {
-  final bool onboard;
-  bool isDark;
+  bool? onboard;
+  bool? isDark;
   Widget screen;
   MyApp({
     required this.onboard,
@@ -49,9 +49,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context)=>AppCubit()..changeTheme(
-        fromShared: isDark,
-      )..getHomeData()..getCategoriesData()..getNotificationsData()..getFavorites()..getContacts()
+      create: (context)=>AppCubit()..getHomeData()..getCategoriesData()
+      ..getNotificationsData()..getFavorites()..getContacts()
       ..getProfile()..getFQA()..getCart(),
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state){},
@@ -59,7 +58,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: SplashScreen(screen),
-            theme: AppCubit.get(context).isDark ? darkTheme : lightTheme,
+            theme: lightTheme,
           );
         }, 
       ),

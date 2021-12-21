@@ -4,7 +4,6 @@ import 'package:shop_app/models/contacts_model.dart';
 import 'package:shop_app/modules/account_screen.dart';
 import 'package:shop_app/modules/fqa_screen.dart';
 import 'package:shop_app/modules/notifications_screen.dart';
-import 'package:shop_app/modules/settings_screen.dart';
 import 'package:shop_app/modules/web_view_screen.dart';
 import 'package:shop_app/shared/components/components.dart';
 import 'package:shop_app/shared/cubit/cubit.dart';
@@ -33,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                   null,
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 25.0,
                 ),
                 itemBuilder(
                   title: 'My Account', 
@@ -50,17 +49,6 @@ class ProfileScreen extends StatelessWidget {
                     navigateTo(
                       context: context, 
                       Widget: NotificationsScreen(),
-                    );
-                  },
-                ),
-                divider(),
-                itemBuilder(
-                  title: 'Settings',
-                  icon:  Icons.settings_outlined,
-                  onTap: (){
-                    navigateTo(
-                      context: context, 
-                      Widget: SettingsScreen(),
                     );
                   },
                 ),

@@ -41,8 +41,8 @@ class AppCubit extends Cubit<AppStates>{
     DioHelper.postData(
       url: Login, 
       data: {
-        'email':'${email}',
-        'password':'${password}',
+        'email':email,
+        'password':password,
       },
     ).then((value) {
       model= LoginModel.fromJson(value.data);
@@ -61,7 +61,7 @@ class AppCubit extends Cubit<AppStates>{
     DioHelper.postData(
       url: verfiyEmail, 
       data: {
-        'email':'${email}',
+        'email':email,
       },
     ).then((value) {
       forgetMsg=value.data['message'];
@@ -79,9 +79,9 @@ class AppCubit extends Cubit<AppStates>{
     DioHelper.postData(
       url: resetPassword, 
       data: {
-        'email':'${email}',
-        'code':'${code}',
-        'password':'${password}',
+        'email':email,
+        'code':code,
+        'password':password,
       },
     ).then((value){
       resetStatus=value.data['status'];
@@ -102,10 +102,10 @@ class AppCubit extends Cubit<AppStates>{
     DioHelper.postData(
       url: Register, 
       data: {
-        'name':'${name}',
-        'email':'${email}',
-        'phone':'${phone}',
-        'password':'${password}',
+        'name':name,
+        'email':email,
+        'phone':phone,
+        'password':password,
       },
     ).then((value) {
       emit(RegisterSuccessState());
@@ -119,19 +119,6 @@ class AppCubit extends Cubit<AppStates>{
   void closeOnboard(){
     CacheHelper.saveData(key: 'onBoarding', value: false);
     emit(OnBoardingClosedState());
-  }
-  bool isDark=false;
-  changeTheme({
-    bool? fromShared,
-  }){
-    if (fromShared!=null) {
-      isDark=fromShared;
-    }
-    else{
-      isDark=!isDark;
-      CacheHelper.saveData(key: 'isDark', value: isDark);
-      emit(ChangeThemeState());
-    }
   }
   int currentIndex=0;
 
@@ -206,7 +193,7 @@ class AppCubit extends Cubit<AppStates>{
   AddDeleteFavorite? adFavModel;
   Map<int, bool>favorites={};
   void changeFavorite({
-    required int id,
+    required dynamic id,
 
   }){
     favorites[id]=!favorites[id]!;
@@ -214,7 +201,7 @@ class AppCubit extends Cubit<AppStates>{
     DioHelper.postData(
       url: Favorites, 
       data: {
-        'product_id':'${id}'
+        'product_id': id,
       },
       token: token,
     ).then((value) {
@@ -336,7 +323,7 @@ class AppCubit extends Cubit<AppStates>{
   }
   late String cartMsg;
   void adCart({
-    required int id,
+    required dynamic id,
   }){
     DioHelper.postData(
       token: token,

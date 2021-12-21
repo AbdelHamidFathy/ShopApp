@@ -23,7 +23,7 @@ class Data {
 }
 
 class FavoritesData {
-  late int id;
+  late dynamic id;
   late Product product;
 
   FavoritesData.fromJson(Map<String, dynamic> json) {
@@ -33,7 +33,7 @@ class FavoritesData {
 }
 
 class Product {
-  late int id;
+  late dynamic id;
   late dynamic price;
   late dynamic oldPrice;
   late int discount;

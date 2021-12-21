@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 36.0,
                       fontWeight: FontWeight.bold,
-                      color: AppCubit.get(context).isDark ? Colors.white : Colors.black,
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(
