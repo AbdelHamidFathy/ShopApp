@@ -60,7 +60,6 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             home: SplashScreen(screen),
             theme: AppCubit.get(context).isDark ? darkTheme : lightTheme,
-            darkTheme:ThemeData(),
           );
         }, 
       ),
